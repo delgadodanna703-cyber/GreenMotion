@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="it" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenMotion Industries - Career Portal</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#064e3b',
+                            900: '#022c22',
+                        },
+                        darkbg: '#091310'
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #060d0a;
+            color: #f1f5f9;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        .glow-effect {
+            box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.3);
+        }
+        .glass-panel {
+            background: rgba(12, 28, 22, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(52, 211, 153, 0.15);
+        }
+        .glass-card {
+            background: rgba(18, 38, 30, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(52, 211, 153, 0.12);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(52, 211, 153, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -10px rgba(16, 185, 129, 0.25);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .animated-bg {
+            background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.18) 0%, rgba(6, 13, 10, 0) 70%);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between relative animated-bg selection:bg-brand-500 selection:text-white">
+
+    <!-- Ambient Glowing Background Elements -->
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="fixed bottom-10 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 border-b border-brand-500/20 glass-panel">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-400 to-brand-700 flex items-center justify-center text-darkbg font-heading font-black text-xl shadow-lg shadow-brand-500/30">
+                    GM
+                </div>
+                <div>
+                    <span class="font-heading font-extrabold text-2xl tracking-tight text-white">GREEN<span class="text-brand-400">MOTION</span></span>
+                    <span class="block text-[10px] font-semibold text-brand-400/80 tracking-widest uppercase">Clean Automotive Mobility</span>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-6">
+                <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-900/60 border border-brand-500/30 text-xs font-semibold text-brand-400">
+                    <span class="w-2 h-2 rounded-full bg-brand-400 animate-ping"></span>
+                    #PensaGreenViviClean
+                </div>
+                <button onclick="openApplyModal()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 text-darkbg font-bold text-sm tracking-wide shadow-lg shadow-brand-500/25 transition-all duration-300 hover:scale-105 active:scale-95">
+                    Candidati Ora <i class="fa-solid fa-arrow-right-long ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-grow">
+
+        <!-- Hero Section Banner -->
+        <div class="glass-panel rounded-3xl p-6 sm:p-10 mb-10 relative overflow-hidden glow-effect border-brand-500/30">
+            <div class="absolute top-0 right-0 w-full lg:w-1/2 h-full opacity-25 pointer-events-none bg-cover bg-center mix-blend-luminosity" style="background-image: url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="relative z-10 max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-400/30 text-brand-400 font-semibold text-xs uppercase tracking-wider mb-4">
+                    <i class="fa-solid fa-bolt text-brand-400"></i> Posizione Aperta • Piemonte (Italia)
+                </div>
+                <h1 class="font-heading font-black text-3xl sm:text-5xl text-white leading-tight mb-4">
+                    Customer Service <span class="gradient-text">Supervisor</span>
+                </h1>
+                <p class="text-slate-300 text-base sm:text-lg mb-6 leading-relaxed font-light">
+                    "Guida la squadra. Organizza il successo. Custodisci il cliente." <br class="hidden sm:inline">
+                    Unisciti al team di GreenMotion in Piemonte e trasforma il futuro della mobilità sostenibile in Europa.
+                </p>
+
+                <!-- Key Specs Grid Pills -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <div class="glass-card p-3 rounded-xl flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg"><i class="fa-solid fa-language"></i></div>
+                        <div>
+                            <span class="block text-[11px] text-slate-400 uppercase font-semibold">Lingua Chiave</span>
+                            <span class="text-sm font-bold text-white">Tedesco B2</span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-3 rounded-xl flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg"><i class="fa-solid fa-euro-sign"></i></div>
+                        <div>
+                            <span class="block text-[11px] text-slate-400 uppercase font-semibold">Package RAL</span>
+                            <span class="text-sm font-bold text-white">€34K - €48K</span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-3 rounded-xl flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg"><i class="fa-solid fa-clock"></i></div>
+                        <div>
+                            <span class="block text-[11px] text-slate-400 uppercase font-semibold">Orario Fisso</span>
+                            <span class="text-sm font-bold text-white">9:00 - 18:00</span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-3 rounded-xl flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg"><i class="fa-solid fa-building-user"></i></div>
+                        <div>
+                            <span class="block text-[11px] text-slate-400 uppercase font-semibold">Contratto</span>
+                            <span class="text-sm font-bold text-white">Indeterminato</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Navigation Tabs -->
+        <div class="flex flex-wrap gap-2 mb-8 border-b border-slate-800 pb-4">
+            <button onclick="switchTab('tab-vision')" id="btn-tab-vision" class="tab-btn px-5 py-3 rounded-xl text-sm font-bold transition-all flex items-center gap-2 bg-brand-500 text-darkbg shadow-lg shadow-brand-500/20">
+                <i class="fa-solid fa-leaf"></i> 1. Visione & Azienda
+            </button>
+            <button onclick="switchTab('tab-role')" id="btn-tab-role" class="tab-btn px-5 py-3 rounded-xl text-sm font-bold text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-2">
+                <i class="fa-solid fa-user-gear"></i> 2. Il Ruolo & Responsabilità
+            </button>
+            <button onclick="switchTab('tab-req')" id="btn-tab-req" class="tab-btn px-5 py-3 rounded-xl text-sm font-bold text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-2">
+                <i class="fa-solid fa-graduation-cap"></i> 3. Requisiti & Lingue
+            </button>
+            <button onclick="switchTab('tab-offer')" id="btn-tab-offer" class="tab-btn px-5 py-3 rounded-xl text-sm font-bold text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-2">
+                <i class="fa-solid fa-gift"></i> 4. Cosa Offriamo & Benefits
+            </button>
+        </div>
+
+        <!-- TAB 1: VISIONE & AZIENDA -->
+        <div id="tab-vision" class="tab-content transition-all duration-500">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Company Stats & Story Card -->
+                <div class="glass-card rounded-2xl p-6 lg:col-span-2 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-400">La Nostra Storia</span>
+                            <span class="text-xs text-slate-400 font-mono">EST. 2010 • PIEMONTE</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl text-white mb-3">GreenMotion Industries S.r.l.</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Fondata in Piemonte nel 2010, GreenMotion è un'azienda leader nella produzione di componenti innovativi per la mobilità sostenibile. Produciamo tecnologie avanzate per produttori di biciclette elettriche (e-bike), veicoli industriali e sistemi di mobilità pulita con riconoscimento del marchio in tutto il mondo.
+                        </p>
+                    </div>
+
+                    <!-- Interactive Live Counters Grid -->
+                    <div class="grid grid-cols-3 gap-4 pt-4 border-t border-slate-800">
+                        <div class="text-center p-3 rounded-xl bg-slate-900/40">
+                            <span class="block font-heading font-black text-2xl text-brand-400">180+</span>
+                            <span class="text-[11px] text-slate-400 font-medium">Collaboratori in Europa</span>
+                        </div>
+                        <div class="text-center p-3 rounded-xl bg-slate-900/40">
+                            <span class="block font-heading font-black text-2xl text-brand-400">3+</span>
+                            <span class="text-[11px] text-slate-400 font-medium">Mercati UE (DE, FR, ES)</span>
+                        </div>
+                        <div class="text-center p-3 rounded-xl bg-slate-900/40">
+                            <span class="block font-heading font-black text-2xl text-brand-400">100%</span>
+                            <span class="text-[11px] text-slate-400 font-medium">Impegno Green</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eco Mobility Components Interactive Gallery -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-heading font-bold text-lg text-white mb-2">Polo Tecnologico</h4>
+                        <p class="text-slate-400 text-xs mb-4">I settori chiave su cui lavora il team Customer Care:</p>
+
+                        <div class="space-y-3">
+                            <div class="p-3 rounded-xl bg-brand-950/40 border border-brand-500/20 hover:border-brand-400/50 transition-all flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-sm"><i class="fa-solid fa-bicycle"></i></div>
+                                <div>
+                                    <h5 class="text-xs font-bold text-white">E-Bike Components</h5>
+                                    <span class="text-[10px] text-slate-400">Sistemi di propulsione e batterie</span>
+                                </div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-brand-950/40 border border-brand-500/20 hover:border-brand-400/50 transition-all flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-sm"><i class="fa-solid fa-charging-station"></i></div>
+                                <div>
+                                    <h5 class="text-xs font-bold text-white">Stazioni di Ricarica EV</h5>
+                                    <span class="text-[10px] text-slate-400">Infrastrutture Smart Energy</span>
+                                </div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-brand-950/40 border border-brand-500/20 hover:border-brand-400/50 transition-all flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-sm"><i class="fa-solid fa-truck-monster"></i></div>
+                                <div>
+                                    <h5 class="text-xs font-bold text-white">Veicoli Industriali Green</h5>
+                                    <span class="text-[10px] text-slate-400">Power-train elettrici heavy-duty</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: IL RUOLO & RESPONSABILITÀ -->
+        <div id="tab-role" class="tab-content hidden transition-all duration-500">
+            <div class="mb-6">
+                <h3 class="font-heading font-bold text-2xl text-white mb-2">Cosa farai ogni giorno</h3>
+                <p class="text-slate-400 text-sm">Passa sopra le schede per scoprire l'impatto di ogni attività aziendale.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="glass-card rounded-2xl p-6 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 group-hover:bg-brand-500 group-hover:text-darkbg transition-all">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-white mb-2">Leadership di 6 Persone</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Gestire, coordinare, sviluppare e formare il team di propria competenza, monitorando le attività e supportando la crescita professionale dei collaboratori.
+                    </p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 group-hover:bg-brand-500 group-hover:text-darkbg transition-all">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-white mb-2">Controllo Qualità &amp; Empatia</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Effettuare controlli a campione sulle comunicazioni (chiamate, chat ed email) per garantire che gli standard di cortesia ed accuratezza tecnica siano rispettati.
+                    </p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 group-hover:bg-brand-500 group-hover:text-darkbg transition-all">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-white mb-2">KPI &amp; Report per l'AD</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Garantire il rendiconto dei principali indicatori di performance ed evidenziare le criticità ricorrenti segnalate dagli utenti (es. bug dell'app o aree di ricarica).
+                    </p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 group-hover:bg-brand-500 group-hover:text-darkbg transition-all">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-white mb-2">Collaborazione Interfunzionale</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Unire Logistica, Produzione e Assistenza clienti. Favorire una comunicazione efficace e fluida con tutte le altre funzioni dell'azienda.
+                    </p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 group-hover:bg-brand-500 group-hover:text-darkbg transition-all">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-white mb-2">Pianificazione Operativa</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Definire le priorità operative quotidiane, pianificare i turni del team ed assicurare il rispetto rigoroso delle scadenze di assistenza.
+                    </p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 group border-brand-500/40">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-crown text-yellow-400"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-white mb-2">Visibilità Strategica</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Interfacciamento diretto con la Direzione Aziendale e l'Amministratore Delegato per la crescita dei processi strategici.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: REQUISITI & LINGUE -->
+        <div id="tab-req" class="tab-content hidden transition-all duration-500">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <!-- Interactive Language Skill Rings -->
+                <div class="glass-card rounded-2xl p-6">
+                    <h3 class="font-heading font-bold text-xl text-white mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-globe text-brand-400"></i> Certificazioni Linguistiche Obbligatorie
+                    </h3>
+                    
+                    <div class="space-y-5">
+                        <!-- Italian Badge -->
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm font-bold text-white flex items-center gap-2">🇮🇹 Italiano</span>
+                                <span class="text-xs font-bold text-brand-400">Native / Madrelingua</span>
+                            </div>
+                            <div class="w-full h-3 rounded-full bg-slate-800 overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-brand-500 to-emerald-300 w-full rounded-full"></div>
+                            </div>
+                        </div>
+
+                        <!-- English Badge -->
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm font-bold text-white flex items-center gap-2">🇬🇧 Inglese</span>
+                                <span class="text-xs font-bold text-brand-400">Livello C1 (Avanzato)</span>
+                            </div>
+                            <div class="w-full h-3 rounded-full bg-slate-800 overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-brand-500 to-emerald-300 w-[90%] rounded-full"></div>
+                            </div>
+                        </div>
+
+                        <!-- German Badge -->
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm font-bold text-white flex items-center gap-2">🇩🇪 Tedesco</span>
+                                <span class="text-xs font-bold text-brand-400">Livello B2 (Intermedio Avanzato)</span>
+                            </div>
+                            <div class="w-full h-3 rounded-full bg-slate-800 overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-brand-500 to-emerald-300 w-[75%] rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 rounded-xl bg-brand-950/40 border border-brand-500/20 text-xs text-slate-300">
+                        <i class="fa-solid fa-circle-info text-brand-400 mr-1"></i> La conoscenza del tedesco è fondamentale per supportare la forte espansione del mercato DACH (Germania, Austria, Svizzera).
+                    </div>
+                </div>
+
+                <!-- Academic & Technical Checklist -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-heading font-bold text-xl text-white mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-check-double text-brand-400"></i> Esperienza &amp; Titoli
+                        </h3>
+
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
+                                <div>
+                                    <strong class="text-white">Formazione:</strong> Laurea Magistrale o Master in Management (preferenziale).
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
+                                <div>
+                                    <strong class="text-white">Esperienza:</strong> Almeno 3 anni di esperienza nel coordinamento di team o Customer Service.
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
+                                <div>
+                                    <strong class="text-white">Digital Skills:</strong> Certificazione EIPASS standard e ottima padronanza Pacchetto Office.
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
+                                <div>
+                                    <strong class="text-white">Sector Knowledge:</strong> Conoscenza base o passione per il settore Automotive / E-Mobility.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: COSA OFFRIAMO & BENEFITS -->
+        <div id="tab-offer" class="tab-content hidden transition-all duration-500">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                
+                <!-- Interactive Salary Card -->
+                <div class="glass-card rounded-2xl p-6 border-brand-500/40 relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-brand-500/10 rounded-full blur-xl"></div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-400">Retribuzione Annuai</span>
+                    <h3 class="font-heading font-black text-3xl sm:text-4xl text-white my-3">€34.000 - €48.000</h3>
+                    <p class="text-xs text-slate-400 mb-6">Commisurata all'effettiva esperienza + Bonus Variabile annuale sulle performance aziendali.</p>
+
+                    <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-xs space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-slate-400">Contratto:</span>
+                            <span class="text-white font-bold">Tempo Indeterminato</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-400">Sede principale:</span>
+                            <span class="text-white font-bold">Piemonte (Italia)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work-Life Balance Card -->
+                <div class="glass-card rounded-2xl p-6">
+                    <div class="w-10 h-10 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg mb-3">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-white mb-2">Benessere &amp; Orario Stabile</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                        Pianificazione oraria trasparente e strutturata in anticipo (<strong>9:00 - 18:00, turni fissi</strong>). Eliminiamo lo stress da imprevisti per tutelare la tua vita privata.
+                    </p>
+                    <span class="inline-flex items-center text-[11px] font-semibold text-brand-400">
+                        <i class="fa-solid fa-circle-check mr-1.5"></i> Zero straordinari improvvisi
+                    </span>
+                </div>
+
+                <!-- Career Growth Card -->
+                <div class="glass-card rounded-2xl p-6">
+                    <div class="w-10 h-10 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg mb-3">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-lg text-white mb-2">Crescita Multinazionale</h4>
+                    <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                        Opportunità di lavorare all'interno di una multinazionale leader nella mobilità elettrica. Modalità di lavoro in presenza con disponibilità a trasferte occasionali.
+                    </p>
+                    <span class="inline-flex items-center text-[11px] font-semibold text-brand-400">
+                        <i class="fa-solid fa-circle-check mr-1.5"></i> Formazione manageriale continua
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call To Action Banner -->
+        <div class="glass-panel rounded-2xl p-8 border-brand-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <h3 class="font-heading font-bold text-2xl text-white mb-1">Pronto a guidare il cambiamento?</h3>
+                <p class="text-slate-400 text-sm">La nostra ambizione è chiara. Stiamo costruendo un futuro sostenibile per l'Europa.</p>
+            </div>
+            <button onclick="openApplyModal()" class="w-full md:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 text-darkbg font-heading font-black text-base shadow-xl shadow-brand-500/25 transition-all hover:scale-105 active:scale-95 whitespace-nowrap">
+                Invia la tua Candidatura <i class="fa-solid fa-paper-plane ml-2"></i>
+            </button>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900 bg-darkbg/90 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-brand-500 flex items-center justify-center text-darkbg font-bold text-xs">GM</div>
+                <span class="text-xs font-semibold text-slate-400">GreenMotion Industries S.r.l. • Piemonte (Italia)</span>
+            </div>
+            <div class="text-xs text-slate-500">
+                #PensaGreenViviClean • Career Opportunity
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE CANDIDATE MODAL -->
+    <div id="apply-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden transition-all duration-300 opacity-0">
+        <div class="glass-panel w-full max-w-xl rounded-3xl p-6 sm:p-8 border-brand-500/40 relative shadow-2xl overflow-y-auto max-h-[90vh]">
+            <!-- Close Button -->
+            <button onclick="closeApplyModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-400">Candidatura Rapida</span>
+                <h3 class="font-heading font-bold text-2xl text-white">GreenMotion Hiring Team</h3>
+                <p class="text-xs text-slate-400">Posizione: Customer Service Supervisor (German Speaker)</p>
+            </div>
+
+            <form id="apply-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Nome e Cognome *</label>
+                    <input type="text" required placeholder="Mario Rossi" class="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-brand-400">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Email *</label>
+                        <input type="email" required placeholder="mario.rossi@email.com" class="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-brand-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Telefono *</label>
+                        <input type="tel" required placeholder="+39 333 1234567" class="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-brand-400">
+                    </div>
+                </div>
+
+                <!-- Language Quick Verification Checklist -->
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-2">Conferma Requisiti Linguistici *</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/50 border border-slate-800 cursor-pointer text-xs text-slate-300">
+                            <input type="checkbox" required class="accent-brand-500"> 🇮🇹 Madrelingua
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/50 border border-slate-800 cursor-pointer text-xs text-slate-300">
+                            <input type="checkbox" required class="accent-brand-500"> 🇬🇧 Inglese C1
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/50 border border-slate-800 cursor-pointer text-xs text-slate-300">
+                            <input type="checkbox" required class="accent-brand-500"> 🇩🇪 Tedesco B2
+                        </label>
+                    </div>
+                </div>
+
+                <!-- CV File Upload Dropzone -->
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Carica il tuo CV (PDF) *</label>
+                    <div onclick="document.getElementById('cv-file').click()" class="border-2 border-dashed border-slate-700 hover:border-brand-400 rounded-2xl p-4 text-center cursor-pointer transition-colors bg-slate-900/40">
+                        <i class="fa-solid fa-cloud-arrow-up text-2xl text-brand-400 mb-2"></i>
+                        <span id="cv-label" class="block text-xs text-slate-400">Clicca qui per selezionare il tuo Curriculum PDF</span>
+                        <input type="file" id="cv-file" accept=".pdf,.doc,.docx" class="hidden" onchange="updateFileLabel(this)">
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 text-darkbg font-bold text-sm tracking-wide shadow-lg shadow-brand-500/20 hover:from-brand-400 hover:to-brand-500 transition-all">
+                    Invia Candidatura Finale <i class="fa-solid fa-paper-plane ml-1"></i>
+                </button>
+            </form>
+
+            <!-- Success Feedback Animation (Hidden by default) -->
+            <div id="success-message" class="hidden text-center py-8 space-y-4">
+                <div class="w-16 h-16 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center text-3xl mx-auto animate-bounce">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h4 class="font-heading font-bold text-2xl text-white">Candidatura Inviata con Successo!</h4>
+                <p class="text-xs text-slate-300 max-w-sm mx-auto">
+                    Grazie per l'interesse verso GreenMotion Industries. Il nostro team HR in Piemonte esaminerà il tuo CV per la posizione di Supervisor.
+                </p>
+                <button onclick="closeApplyModal()" class="px-6 py-2.5 rounded-xl bg-slate-800 text-white font-bold text-xs hover:bg-slate-700">
+                    Chiudi
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Tab Switching Functionality
+        function switchTab(tabId) {
+            // Hide all tab content
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            
+            // Show target tab
+            const target = document.getElementById(tabId);
+            if(target) target.classList.remove('hidden');
+
+            // Reset tab button states
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-500', 'text-darkbg', 'shadow-lg', 'shadow-brand-500/20');
+                btn.classList.add('text-slate-400', 'hover:text-white');
+            });
+
+            // Highlight active button
+            const activeBtn = document.getElementById('btn-' + tabId);
+            if(activeBtn) {
+                activeBtn.classList.add('bg-brand-500', 'text-darkbg', 'shadow-lg', 'shadow-brand-500/20');
+                activeBtn.classList.remove('text-slate-400', 'hover:text-white');
+            }
+        }
+
+        // Modal Handlers
+        function openApplyModal() {
+            const modal = document.getElementById('apply-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.remove('opacity-0'), 10);
+        }
+
+        function closeApplyModal() {
+            const modal = document.getElementById('apply-modal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                // Reset form state
+                document.getElementById('apply-form').classList.remove('hidden');
+                document.getElementById('success-message').classList.add('hidden');
+                document.getElementById('apply-form').reset();
+                document.getElementById('cv-label').innerText = 'Clicca qui per selezionare il tuo Curriculum PDF';
+            }, 300);
+        }
+
+        function updateFileLabel(input) {
+            const label = document.getElementById('cv-label');
+            if (input.files && input.files[0]) {
+                label.innerText = '📄 File Selezionato: ' + input.files[0].name;
+                label.classList.add('text-brand-400', 'font-bold');
+            }
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('apply-form');
+            const success = document.getElementById('success-message');
+
+            form.classList.add('hidden');
+            success.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
